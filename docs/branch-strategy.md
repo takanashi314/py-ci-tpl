@@ -41,7 +41,7 @@ main
 
 ## Pull Request
 
-Pull RequestとIssueは1対1を基本とする。
+Pull Requestは、対応するIssueを1つ参照する。ただし、`main`の変更を取り込むだけのPull Requestは、Issueを作らない。
 
 | マージ先 | Issueの参照 | Issueを閉じる方法 |
 |---|---|---|
