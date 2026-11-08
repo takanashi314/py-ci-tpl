@@ -60,6 +60,7 @@ Pull Requestは、対応するIssueを1つ参照する。ただし、`main`の�
 | Allow squash merging | 無効 |
 | Allow rebase merging | 無効 |
 | Automatically delete head branches | 無効(`dev`ブランチを残すため) |
+| Default commit message | Pull request title |
 
 ### Rulesets
 
@@ -78,7 +79,11 @@ CIの導入時に、両方のルールセットで「Require status checks to pa
 
 ## Commit Message
 
-Conventional Commits(`<type>(<scope>): <summary>`)に従う(例：`docs(tool.ruff): add tool-ruff.md`)。マージコミットは対象外とする。
+Conventional Commits(`<type>(<scope>): <summary>`)に従う(例：`docs(tool.ruff): add tool-ruff.md`)。
+
+マージコミットは対象外であり、`Default commit message: Pull request title'を変更しない。
+つまり、`PR-title (#NN)`の形式となっているのが正しい。
+例外として、#1 と #4 は、方針を決定する前のものなので、形式が異なっている。
 
 | `<type>` | 用途 |
 |---|---|
