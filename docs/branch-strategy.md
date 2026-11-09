@@ -41,7 +41,12 @@ main
 
 ## Pull Request
 
-Pull Requestは、対応するIssueを1つ参照する。ただし、`main`の変更を取り込むだけのPull Requestは、Issueを作らない。
+Pull Requestは、対応するIssueを1つ参照する。ただし、次のPull Requestは、Issueを作らない。
+
+- `docs/<topic>`・`fix/<topic>`のうち、既存のファイルの中身の修正だけを行うもの(ファイルの追加・削除・名前の変更・移動を含むものは、Issueを作る)
+- `main`の変更を取り込むだけのもの
+
+Issueを作らない場合は、変更の理由をPull Requestの本文に書く。
 
 | マージ先 | Issueの参照 | Issueを閉じる方法 |
 |---|---|---|
@@ -81,7 +86,7 @@ CIの導入時に、両方のルールセットで「Require status checks to pa
 
 Conventional Commits(`<type>(<scope>): <summary>`)に従う(例：`docs(tool.ruff): add tool-ruff.md`)。
 
-マージコミットは対象外であり、`Default commit message: Pull request title'を変更しない。
+マージコミットは対象外であり、`Default commit message: Pull request title`を変更しない。
 つまり、`PR-title (#NN)`の形式となっているのが正しい。
 例外として、#1 と #4 は、方針を決定する前のものなので、形式が異なっている。
 
