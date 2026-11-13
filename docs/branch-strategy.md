@@ -48,6 +48,8 @@ Pull Requestは、対応するIssueを1つ参照する。ただし、次のPull 
 
 Issueを作らない場合は、変更の理由をPull Requestの本文に書く。
 
+Pull Requestのタイトルはマージコミットのメッセージになるため、Pull Request全体の変更を英語で簡潔に書く(例：`Add branch strategy document`)。
+
 | マージ先 | Issueの参照 | Issueを閉じる方法 |
 |---|---|---|
 | `feature/<tool>` | `Refs #<番号>` | 完了条件を満たした時点で手動で閉じる |
