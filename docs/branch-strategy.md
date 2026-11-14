@@ -39,16 +39,18 @@ main
 - マージには「Create a merge commit」を使う。ブランチの分岐と合流を履歴に残すためである。
 - `main`の変更を`feature/<tool>`に取り込む場合は、`main` → `feature/<tool>`のPull Requestでマージする。`dev/<tool>/<topic>`には、更新後の`feature/<tool>`を取り込む。
 
-## Pull Request
+## Pull Request with Issue
+Pull Requestは、対応するIssueを1つ参照する。
 
-Pull Requestは、対応するIssueを1つ参照する。ただし、次のPull Requestは、Issueを作らない。
+## Pull Request without Issue
+次のPull Requestは、Issueを作らなくてもよい。
 
-- `docs/<topic>`・`fix/<topic>`のうち、既存のファイルの中身の修正だけを行うもの(ファイルの追加・削除・名前の変更・移動を含むものは、Issueを作る)
+- `docs/<topic>`・`fix/<topic>`のうち、既存のファイルの中身の修正だけを行うもの
 - `main`の変更を取り込むだけのもの
 
 Issueを作らない場合は、変更の理由をPull Requestの本文に書く。
 
-Pull Requestのタイトルはマージコミットのメッセージになるため、Pull Request全体の変更を英語で簡潔に書く(例：`Add branch strategy document`)。
+Pull Requestのタイトルは、Pull Request全体の変更を英語で簡潔に書く。
 
 | マージ先 | Issueの参照 | Issueを閉じる方法 |
 |---|---|---|
@@ -86,16 +88,7 @@ CIの導入時に、両方のルールセットで「Require status checks to pa
 
 ## Commit Message
 
-Conventional Commits(`<type>(<scope>): <summary>`)に従う(例：`docs(tool.ruff): add tool-ruff.md`)。
+Conventional Commits(`<type>(<scope>): <summary>`)に従う)。
 
-マージコミットは対象外であり、`Default commit message: Pull request title`を変更しない。
-つまり、`PR-title (#NN)`の形式となっているのが正しい。
+マージコミットは対象外であり、PRタイトルを変更せずに採用する。
 例外として、#1 と #4 は、方針を決定する前のものなので、形式が異なっている。
-
-| `<type>` | 用途 |
-|---|---|
-| `feat` | 機能の追加 |
-| `fix` | 誤りの修正 |
-| `docs` | 文書の追加・修正 |
-| `refactor` | 動作を変えない整理 |
-| `chore` | 設定・依存関係など、上記以外の変更 |
