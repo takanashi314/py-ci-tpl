@@ -8,30 +8,30 @@
 | `main` | リリース可能な状態を保つ | - | - | - |
 | `feature/<tool>` | 1つのツールの導入作業をまとめる | `main` | `main` | 残す |
 | `dev/<tool>/<topic>` | ツール導入の中の個別作業 | `feature/<tool>` | `feature/<tool>` | 残す |
-| `docs/<topic>` | プロジェクト共通の文書 | `main` | `main` | 削除する |
-| `fix/<topic>` | `main`に入ったツールの小さな誤りの修正 | `main` | `main` | 削除する |
+| `docs/<topic>/**` | プロジェクト共通の文書 | `main` | `main` | 削除する |
+| `fix/<topic>/**` | `main`に入ったツールの小さな誤りの修正 | `main` | `main` | 削除する |
 
 ```text
 main
  ├─ feature/<tool>
  │   └─ dev/<tool>/<topic>
- ├─ docs/<topic>
- └─ fix/<topic>
+ ├─ docs/<topic>/**
+ └─ fix/<topic>/**
 ```
 
 - `<tool>`にはツール名を、`<topic>`には作業内容をケバブケースの短い英単語で入れる(例：`feature/ruff`、`dev/ruff/ruff-config`)。
 - `main`への反映はツール単位とし、導入途中のツールが他のツールの作業に影響しないようにする。
 - `dev/<tool>/<topic>`では1つの作業だけを扱う。
-- `fix/<topic>`では誤りの修正だけを扱う。設定や機能の追加は`feature/<tool>`と`dev/<tool>/<topic>`で扱う。
-- `docs`/`fix`ブランチは数が多くなりやすいため、マージ後に削除する。コミットとPull Requestのページは残る。
+- `fix/<topic>/**`では誤りの修正だけを扱う。設定や機能の追加は`feature/<tool>`と`dev/<tool>/<topic>`で扱う。
+- `docs/<topic>/**`と`fix/<topic>/**`は数が多くなりやすいため、マージ後に削除する。コミットとPull Requestのページは残る。
 
 文書の作業は、次の区別でブランチを選ぶ。
 
 | 作業 | ブランチ |
 |---|---|
 | 導入中のツールの設定・説明 | `dev/<tool>/<topic>` |
-| `main`に入ったツールの設定・説明の誤り | `fix/<topic>` |
-| プロジェクト共通の文書、複数の文書の表記の統一 | `docs/<topic>` |
+| `main`に入ったツールの設定・説明の誤り | `fix/<topic>/**` |
+| プロジェクト共通の文書、複数の文書の表記の統一 | `docs/<topic>/**` |
 
 ## Merge
 
@@ -47,7 +47,7 @@ Pull Requestは、対応するIssueを1つ参照する。
 
 次のPull Requestは、Issueを作らなくてもよい。
 
-- `docs/<topic>`・`fix/<topic>`のうち、既存のファイルの中身の修正だけを行うもの
+- `docs/<topic>/**`と`fix/<topic>/**`のうち、既存のファイルの中身の修正だけを行うもの
 - `main`の変更を取り込むだけのもの
 
 Issueを作らない場合は、変更の理由をPull Requestの本文に書く。
