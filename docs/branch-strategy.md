@@ -40,9 +40,11 @@ main
 - `main`の変更を`feature/<tool>`に取り込む場合は、`main` → `feature/<tool>`のPull Requestでマージする。`dev/<tool>/<topic>`には、更新後の`feature/<tool>`を取り込む。
 
 ## Pull Request with Issue
+
 Pull Requestは、対応するIssueを1つ参照する。
 
 ## Pull Request without Issue
+
 次のPull Requestは、Issueを作らなくてもよい。
 
 - `docs/<topic>`・`fix/<topic>`のうち、既存のファイルの中身の修正だけを行うもの
@@ -88,7 +90,7 @@ CIの導入時に、両方のルールセットで「Require status checks to pa
 
 ## Commit Message
 
-Conventional Commits(`<type>(<scope>): <summary>`)に従う)。
+Conventional Commits(`<type>(<scope>): <summary>`)に従う。
 
-マージコミットは対象外であり、PRタイトルを変更せずに採用する。
-例外として、#1 と #4 は、方針を決定する前のものなので、形式が異なっている。
+マージコミットは対象外であり、Pull Requestのタイトルを変更せずに採用する。
+例外として、#1と#4は、方針を決定する前のものなので、形式が異なっている。
