@@ -17,3 +17,5 @@ wheels/
 
 # Docs for only me
 /.docs/
+
+.claude/
